@@ -10,6 +10,7 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { QuoteListComponent } from './quote/quote-list/quote-list.component';
 import { AddQuoteComponent } from './quote/add-quote/add-quote.component';
 import { QuoteContainerComponents } from './quote/quote-container/quote-container.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { QuoteContainerComponents } from './quote/quote-container/quote-containe
     NavbarComponent,
     QuoteListComponent,
     AddQuoteComponent,
-    QuoteContainerComponents
+    QuoteContainerComponents,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { QuoteContainerComponents } from './quote/quote-container/quote-container.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   {
-    path: 'quotes',
-    component: QuoteContainerComponents
+    path: 'settings',
+    component: SettingsComponent
   }
 ];
 
