@@ -11,6 +11,7 @@ import { QuoteListComponent } from './quote/quote-list/quote-list.component';
 import { AddQuoteComponent } from './quote/add-quote/add-quote.component';
 import { QuoteContainerComponents } from './quote/quote-container/quote-container.component';
 import { SettingsComponent } from './settings/settings.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SettingsComponent } from './settings/settings.component';
     QuoteListComponent,
     AddQuoteComponent,
     QuoteContainerComponents,
-    SettingsComponent
+    SettingsComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,

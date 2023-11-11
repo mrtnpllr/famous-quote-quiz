@@ -1,0 +1,26 @@
+.choice {
+    border: 1px solid grey;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 1vh;
+    background: grey;
+    color: white;
+    font-weight: bold;
+}
+
+.choice:hover {
+    cursor: pointer;
+    background: rgba(128, 128, 128, 0.589);
+}
+
+.choice:active {
+    color: aqua;
+}
+
+#win {
+    color: green;
+}
+
+#loose {
+    color: red;
+}

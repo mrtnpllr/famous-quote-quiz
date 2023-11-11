@@ -1,0 +1,17 @@
+<div class="container">
+    <button type="button" class="btn btn-primary" (click)="startNewGame()"></button>
+    <h2>Select who said it</h2>
+    <ng-container *ngIf="this.gameService.currentQuote && this.gameService.selectedRandomAuthors">
+        <p>
+            {{this.gameService.currentQuote.text}}
+        </p>
+        <div>
+            <div *ngFor="let author of this.gameService.selectedRandomAuthors" (click)="selectAnswer(author)" class="choice">{{author.name}}<br></div>
+        </div>
+    </ng-container>
+    
+    <ng-container *ngIf="gameCompleted">
+        <div *ngIf="gameOutcome;else loose" id="win">“Correct! The right answer is: {{this.gameService.currentQuote?.author?.name}}</div>
+        <ng-template #loose id="loose">Sorry, you are wrong! The right answer is: {{this.gameService.currentQuote?.author?.name}}</ng-template>
+    </ng-container>
+</div>
