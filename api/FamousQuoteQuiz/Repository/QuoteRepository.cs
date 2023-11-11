@@ -13,9 +13,29 @@ namespace FamousQuoteQuiz.Repository
         }
         public async Task<Quote> CreateAsync(Quote quote)
         {
+            //TODO separate concerns around quote and author, better sqls and mappings should be concidered
             using (var connection = _dbContext.CreateConnection())
             {
-                var sql = "INSERT INTO quotes VALUES (NULL, @text, @authorid); SELECT LAST_INSERT_ID();";
+                var sql = $"SELECT authorid FROM authors WHERE name='{quote.Author.Name}';";
+
+                //TODO bad practice, only use temporarily!
+                try
+                {
+                    var authorids = await connection.QuerySingleAsync<Author>(sql);
+                    quote.AuthorId = authorids.AuthorId;
+                }
+                catch (Exception ex)
+                {
+                    if (!ex.Message.Contains("Sequence contains no elements"))
+                    {
+                        throw;
+                    }
+
+                    sql = "INSERT INTO authors VALUES (NULL, @name); SELECT LAST_INSERT_ID();";
+                    quote.AuthorId = Convert.ToInt32(await connection.ExecuteScalarAsync(sql, quote.Author));
+                }
+
+                sql = "INSERT INTO quotes VALUES (NULL, @text, @authorid); SELECT LAST_INSERT_ID();";
                 var lastInsertID = await connection.ExecuteScalarAsync(sql, quote);
                 
                 //TODO pay attention after around 2 billion records...
