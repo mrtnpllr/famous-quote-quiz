@@ -39,9 +39,15 @@ namespace FamousQuoteQuiz.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllQuotes()
         {
-            var response = await _quoteRepository.GetAsync();
-
-            return Ok(response.ToList());
+            try
+            {
+                var response = await _quoteRepository.GetAsync();
+                return Ok(response.ToList());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
 
         [HttpGet]
