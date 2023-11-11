@@ -20,6 +20,7 @@ namespace FamousQuoteQuiz
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddScoped<IQuoteRepository, QuoteRepository>();
+            builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
 
             var app = builder.Build();
 
