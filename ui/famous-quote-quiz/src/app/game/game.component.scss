@@ -18,9 +18,18 @@
 }
 
 #win {
+    font-weight: bold;
     color: green;
 }
 
 #loose {
+    font-weight: bold;
     color: red;
+}
+
+p{
+    border-radius: 15px;
+    background: #ff0076;
+    color: white;
+    font-size: 1.5rem;
 }
