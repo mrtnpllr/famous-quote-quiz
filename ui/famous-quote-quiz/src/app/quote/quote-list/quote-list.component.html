@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <table class="table">
+        <thead>
+            <th>Text</th>
+            <th>Author</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let quote of quotes">
+                <td>{{quote.text}}</td>
+                <td>{{quote.author!.name}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="deleteQuote(quote.quoteId);$event.stopPropagation()">
+                        Delete
+                    </button>
+                </td>
+
+                <!-- <td [ngClass]="getClasses(expense)">
+                    <div *ngIf="openedExpenses.length > 0 && openedExpenses.indexOf(expense) !== -1">
+                        <ng-container class="container">
+                            <edit-expense [id]="expense.expenseId" (click)="$event.stopPropagation()" (updateEmitter)="refresh()"></edit-expense>
+                        </ng-container>
+                    </div>
+                </td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>
