@@ -43,7 +43,7 @@ export class GameService implements OnDestroy {
         if(this.quotes) {
             this.currentQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
         }
-        
+
         this.createAuthorsArray(3);
     }
 
@@ -64,7 +64,13 @@ export class GameService implements OnDestroy {
                 this.selectedRandomAuthors?.push(author);
             }
         }
+
+        this.selectedRandomAuthors = this.shuffle(this.selectedRandomAuthors);
     }
+
+    shuffle (array:any[]) { 
+        return array.sort(() => Math.random() - 0.5); 
+    }; 
 
     validateAnswer(answer: Author) {
         return this.currentQuote?.author === answer;

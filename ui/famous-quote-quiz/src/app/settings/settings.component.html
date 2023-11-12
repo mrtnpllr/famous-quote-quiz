@@ -1,3 +1,17 @@
-<div class="container tile">
+<div class="container">
     <quote-container></quote-container>
+    <div class="tile mt-2 flex-container">
+        <label class="form-check-label" for="isBinaryMode">Game mode</label>
+        <div class="flex-child">
+            Multiple choice
+        </div>
+        <div class="flex-child">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="isBinaryMode" checked [(ngModel)]="isBinaryMode" (ngModelChange)="changeMode()">
+            </div>
+        </div>
+        <div class="flex-child">
+            Binary
+        </div>
+    </div>
 </div>

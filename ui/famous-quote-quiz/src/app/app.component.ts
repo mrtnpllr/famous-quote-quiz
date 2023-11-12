@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'famous-quote-quiz';
+  
+  //TODO move from here, extract vars to config
+  constructor() {
+    localStorage.setItem("gameMode", "multiple");
+  }
 }

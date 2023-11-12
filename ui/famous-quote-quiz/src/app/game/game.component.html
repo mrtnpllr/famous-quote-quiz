@@ -5,8 +5,15 @@
         <p>
             {{this.gameService.currentQuote.text}}
         </p>
-        <div>
-            <div *ngFor="let author of this.gameService.selectedRandomAuthors" (click)="selectAnswer(author)" class="choice">{{author.name}}<br></div>
+        <div *ngIf="gameMode == 'multiple'">
+            <div *ngFor="let author of this.gameService.selectedRandomAuthors" 
+            (click)="selectAnswer(author)" 
+            class="choice" >{{author.name}}<br></div>
+        </div>
+        <div *ngIf="gameMode == 'binary'">
+            {{this.gameService.selectedRandomAuthors[0].name}}?<br>
+            <span id="yes" class="btn btn-primary" (click)="selectAnswer(this.gameService.selectedRandomAuthors[0])">Yes</span>
+            <span id="no" class="btn btn-danger" (click)="selectNo(this.gameService.selectedRandomAuthors[0])">No</span>
         </div>
     </ng-container>
     

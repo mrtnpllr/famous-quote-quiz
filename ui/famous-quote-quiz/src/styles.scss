@@ -4,3 +4,11 @@
     border-radius: 10px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
+.flex-container {
+    display: flex !important;
+}
+
+.flex-child {
+    flex: 1;
+}

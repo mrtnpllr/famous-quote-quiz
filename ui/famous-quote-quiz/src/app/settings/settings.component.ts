@@ -7,5 +7,9 @@ import { Component } from "@angular/core";
 })
 
 export class SettingsComponent {
+    isBinaryMode?: boolean = false;
 
+    changeMode() {
+        localStorage.setItem("gameMode", this.isBinaryMode ? "binary" : "multiple");
+    }
 }
