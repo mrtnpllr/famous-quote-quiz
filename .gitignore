@@ -264,3 +264,5 @@ paket-files/
 .DS_Store
 .vscode/
 *.mm
+ui/famous-quote-quiz/src/assets/.gitkeep
+ui/famous-quote-quiz/.editorconfig
