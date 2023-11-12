@@ -16,6 +16,7 @@ demo app
 ## TODO
 ### Existing features
 * extract more game logic to server side
+* polish game logic, use timers to auto complete game
 * create more and smaller components
 * separate game logic functions into smaller chunks
 * add logging
