@@ -21,6 +21,8 @@ demo app
 * separate game logic functions into smaller chunks
 * add logging
 * add more sophisticated error handling
+* implement testing both front and backend
+* use feature branches for git workflow
 
 ### New features to implement
 * user handling
